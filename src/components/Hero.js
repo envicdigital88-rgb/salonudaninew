@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 const Hero = () => {
   const [parallaxOffset, setParallaxOffset] = useState(0);
-
+  const [typedText, setTypedText] = useState('');
+  const fullText = 'Every Bride Deserves Her Perfect Moment';
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.pageYOffset;
@@ -12,6 +14,24 @@ const Hero = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    let currentIndex = 0;
+    const typingSpeed = 80; // milliseconds per character
+    
+    const typeWriter = () => {
+      if (currentIndex <= fullText.length) {
+        setTypedText(fullText.substring(0, currentIndex));
+        currentIndex++;
+        setTimeout(typeWriter, typingSpeed);
+      }
+    };
+    
+    // Start typing after a short delay
+    const startDelay = setTimeout(typeWriter, 500);
+    
+    return () => clearTimeout(startDelay);
   }, []);
 
   return (
@@ -33,7 +53,10 @@ const Hero = () => {
       </div>
       <div className="hero-content-overlay">
         <div className="hero-text-block">
-          <h1 className="reveal in">Every Bride Deserves<br />Her Perfect Moment</h1>
+          <h1 className="reveal in hero-typing">
+            {typedText}
+            <span className="typing-cursor">|</span>
+          </h1>
           <p className="hero-subtitle reveal in">From timeless bridal dressing and flawless makeup to luxurious beauty care, Salon Udani is dedicated to creating unforgettable bridal transformations that celebrate your unique beauty and traditions.</p>
           
           <div className="hero-buttons">

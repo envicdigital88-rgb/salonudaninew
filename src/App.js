@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import Preloader from './components/Preloader';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <div className="App">
+      <Preloader />
       <div id="scroll-progress" style={{ width: `${scrollProgress}%` }}></div>
       <Header />
       <Hero />
