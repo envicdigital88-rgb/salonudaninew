@@ -1368,3 +1368,66 @@ footer ul a:hover{color:var(--gold-light);}
 }
 
 .counter{font-family:'Playfair Display',serif;}
+
+
+/* ================= MOBILE RESPONSIVENESS - SECTION GAPS ================= */
+@media(max-width:768px){
+  /* Reduce section padding for mobile */
+  .about-modern{padding:80px 0 70px;}
+  .services{padding:70px 0;}
+  .journey-modern{padding:80px 0;}
+  .why{padding:70px 0;}
+  .collections{padding:80px 0;}
+  .gallery-modern{padding:80px 0;}
+  .beyond{padding:80px 0;}
+  .awards{padding:60px 0;}
+  .testimonials{padding:80px 0;}
+  .insta{padding:70px 0;}
+  .branches{padding:80px 0;}
+  .final-cta{padding:90px 0;}
+  footer{padding:60px 0 20px;}
+  
+  /* Reduce container padding */
+  .container{padding:0 20px;}
+  .container-wide{padding:0 20px;}
+  
+  /* Adjust hero buttons */
+  .hero-buttons{gap:12px; justify-content:flex-start;}
+  .btn{padding:14px 28px; font-size:13.5px;}
+  
+  /* Adjust section headings */
+  .section-head{margin:0 auto 40px;}
+  .section-head h2{font-size:28px;}
+  
+  /* Reduce preloader logo size */
+  .preloader-logo{width:150px; height:150px;}
+}
+
+@media(max-width:480px){
+  /* Further reduce padding for small mobile */
+  .about-modern{padding:60px 0 50px;}
+  .services{padding:50px 0;}
+  .journey-modern{padding:60px 0;}
+  .why{padding:50px 0;}
+  .collections{padding:60px 0;}
+  .gallery-modern{padding:60px 0;}
+  .beyond{padding:60px 0;}
+  .awards{padding:40px 0;}
+  .testimonials{padding:60px 0;}
+  .insta{padding:50px 0;}
+  .branches{padding:60px 0;}
+  .final-cta{padding:70px 0;}
+  footer{padding:50px 0 15px;}
+  
+  /* Smaller container padding */
+  .container{padding:0 16px;}
+  .container-wide{padding:0 16px;}
+  
+  /* Stack hero buttons */
+  .hero-buttons{flex-direction:column; width:100%;}
+  .btn{width:100%; justify-content:center; padding:16px 20px;}
+  
+  /* Smaller headings */
+  .section-head h2{font-size:24px;}
+  .section-head{margin:0 auto 30px;}
+}
